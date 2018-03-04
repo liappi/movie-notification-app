@@ -3,6 +3,8 @@ const app = express();
 const http = require("https");
 const axios = require("axios");
 
+app.set("port", process.env.PORT || 3001);
+
 // Express only serves static assets in production
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
@@ -40,4 +42,7 @@ app.get('/movie/:movieName', (req, res) => {
 //   });
 // })
 
-app.listen(3001, () => console.log("Example app listening on port 3001!"));
+// app.listen(3001, () => console.log("Example app listening on port 3001!"));
+app.listen(app.get("port"), () => {
+  console.log(`Find the server at: http://localhost:${app.get("port")}/`);
+});
