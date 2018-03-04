@@ -3,6 +3,11 @@ const app = express();
 const http = require("https");
 const axios = require("axios");
 
+// Express only serves static assets in production
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
+
 app.get("/movies", (req, res) => {
   axios.get('https://www.eventcinemas.co.nz/Movies/GetNowShowing')
     .then(function (response) {
