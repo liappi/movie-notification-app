@@ -19,17 +19,13 @@ app.get("/movies", (req, res) => {
 });
 
 app.get('/movie/:movieName', (req, res) => {
-  http.get(`https://www.omdbapi.com/?t=${req.params.movieName}&apikey=2b781da6`, resp => {
-    let data = "";
-
-    resp.on("data", chunk => {
-      data += chunk;
-    });
-    resp.on("end", () => {
-      var movie = JSON.parse(data);
-      res.send(movie);
-    });
-  });
+  axios.get(`https://www.omdbapi.com/?t=${req.params.movieName}&apikey=2b781da6`)
+    .then(function (response) {
+      res.send(response.data)
+    })
+    .catch(function (error) {
+      console.log(error);
+    })
 });
 
 // app.get('/movie/poster/:moviePoster', (req, res) => {
