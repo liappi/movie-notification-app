@@ -25,9 +25,7 @@ class Movie extends Component {
           <h6 className="card-subtitle mb-2 text-muted">{this.props.movie.Year}</h6>
           <p className="card-text">{this.props.movie.Plot}</p>
           <p className="card-text">{ratings}</p>
-          <button type="button" className="btn btn-default">
-            <span className="glyphicon glyphicon-heart" aria-hidden="true"></span> Add to Favourites
-          </button>
+          <button type="button" className="btn btn-primary btn-sm">Add to Favourites</button>
         </div>
       </div>
     )
