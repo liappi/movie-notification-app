@@ -43,7 +43,7 @@ class App extends Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
-          <button type="button" className="btn btn-primary" onClick={() =>this.sendEmail()}>Request an email</button>
+          <button type="button" className="btn btn-primary" onClick={() =>this.sendEmail()}>Request an email!</button>
         </header>
 
         <div className="container-fluid">
