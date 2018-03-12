@@ -31,9 +31,6 @@ class App extends Component {
   }
 
   sendEmail() {
-    // fetch("/email", {
-    //   method: 'POST',
-    // })
     fetch('/email')
     .catch((error) => {
       console.error(error);
